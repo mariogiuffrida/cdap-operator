@@ -23,3 +23,17 @@ gcloud builds submit --project=$BUILD_PROJECT_ID --async --config cloudbuild.yam
 #### View Builds:
 
 You can view cloud builds in progress from the GCP console and complete images at `eu.gcr.io/liveramp-eng-data-ops-dev/cdap-controller:${VERSION_CDAP_OPERATOR}`
+
+#### Run the Test using Docker
+
+From the project root folder build the test image by running the following
+
+```
+docker build -f Dockerfile.test . -t test
+```
+
+Execute the image with
+
+```
+docker run test
+```

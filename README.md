@@ -117,3 +117,13 @@ rm /tmp/setup_envtest.sh
 ```
 
 4. Run `make test`
+
+Alternatively, you might run the Unit Tests in a docker container by doing the following.
+From the project root folder build the test image by running the following
+```bash
+docker build -f Dockerfile.test . -t test
+```
+Execute the image with
+```bash
+docker run test
+```

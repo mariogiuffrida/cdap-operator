@@ -25,6 +25,8 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+// CDAPMasterSpec defines the desired state of CDAPMaster
+//
 // Important notes:
 // * The field name of each service MUST match the constant values of ServiceName in constants.go as reflection
 //   is used to find field value.
@@ -168,6 +170,10 @@ type CDAPServiceSpec struct {
 	Lifecycle *corev1.Lifecycle `json:"lifecycle,omitempty"`
 	// Affinity describes node affinity scheduling rules for the service.
 	Affinity *corev1.Affinity `json:"affinity,omitempty"`
+	// Containers define any additional containers a service has
+	// This is a list of containers and can be left blank
+	// A typical use is to add sidecars for a deployment
+	Containers []*corev1.Container `json:"containers,omitempty"`
 }
 
 // CDAPScalableServiceSpec defines the base specification for master services that can have more than one instance.
